@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Gender Prediction Website</title>
+</head>
+<body>
+<div class="background">
+
+    <form class="content flex-row">
+        <div id="predictionForm" class="flex-container">
+            <h1>Mr. or Ms.?</h1>
+            <div>
+                <label for="nameInput">Name</label>
+                <input type="text" id="nameInput" maxlength="255" required oninput="validateNameInput()"
+                       onkeydown="return /[a-zA-Z ]/i.test(event.key)">
+            </div>
+            <div>
+
+                <input type="radio" name="genderChoice" id="male"> Male
+            </div>
+            <div>
+                <input type="radio" name="genderChoice" id="female"> Female
+            </div>
+            <div>
+                <button type="button" id="clearRadioBtn" onclick="clearRadios()">Clear Choice</button>
+            </div>
+
+            <div style="margin-top: 20px">
+                <button type="button" id="submitButton" onclick="submitForm()" disabled>Submit</button>
+                <button type="button" onclick="saveResult()">Save</button>
+            </div>
+        </div>
+
+
+        <div class="flex-container">
+            <h1>Prediction</h1>
+
+            <div id="resultContainer">
+            </div>
+            <div id="savedResult"><h2>Saved Answer: </h2>
+                <h2 id="savedAnswer"></h2>
+                <button id="clearButton" type="button" onclick="clearSavedChoice()">Clear</button>
+            </div>
+        </div>
+
+    </form>
+    <div id="successMessage"></div>
+    <div id="errorMessage"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

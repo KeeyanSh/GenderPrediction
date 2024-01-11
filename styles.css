@@ -1,0 +1,100 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.background {
+    background: url('bg.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 50px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 60px 20px 10px;
+    margin: 5px;
+
+}
+
+.flex-row {
+    display: flex;
+    padding: 25px;
+}
+
+
+button {
+    margin: 5px;
+    padding: 7px;
+    border-radius: 5px;
+    width: 50%;
+
+}
+
+#predictionForm div {
+    padding: 10px;
+}
+
+
+input {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#predictionForm input[type="radio"] {
+    transform: scale(1.5);
+    margin-right: 5px;
+}
+
+
+#successMessage, #errorMessage {
+    position: absolute;
+    bottom: 120px;
+    text-align: center;
+    color: #164f4d;
+    font-size: larger;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    padding: 10px 10px 10px;
+    background-color: #75e07b;
+    border-radius: 15px;
+}
+
+#successMessage {
+    color: white;
+    background-color: green;
+}
+
+#errorMessage {
+    color: white;
+    background-color: red;
+}
+
+
+#savedResult {
+    border: 1px dotted black;
+    padding: 10px;
+    display: none;
+}
+
+#clearRadioBtn {
+    width: 82px;
+    font-size: 11px;
+    display: none;
+}
+
+button:hover {
+    background-color: lightgray; /* Background color on hover */
+}

@@ -1,100 +1,118 @@
 body, html {
+    /* Reset default margin and padding for body and html elements */
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
 .background {
+    /* Set background properties with a cover image */
     background: url('bg.jpg');
+    /* Set the height of the background to cover the entire viewport */
+    height: 100vh;
+    /* Ensure the background image covers the entire container, maintaining its aspect ratio */
     background-size: cover;
+    /* Create a flex container with a column layout for child elements */
     display: flex;
     flex-direction: column;
-
+    /* Center content vertically */
     justify-content: center;
+    /* Center content horizontally */
     align-items: center;
-    height: 100vh;
+
 }
 
 .content {
+    /* Set background color, padding, and border-radius for the main content */
     background: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 50px;
 }
 
-.flex-container {
+.flex-col {
+    /* Set flex container properties for a column layout */
     display: flex;
     flex-direction: column;
     padding: 20px 60px 20px 10px;
     margin: 5px;
-
 }
 
 .flex-row {
+    /* Set flex container properties for a row layout */
     display: flex;
     padding: 25px;
 }
 
-
 button {
+    /* Set common styles for buttons */
     margin: 5px;
     padding: 7px;
     border-radius: 5px;
     width: 50%;
-
 }
 
 #predictionForm div {
+    /* Set padding for div elements inside the prediction form */
     padding: 10px;
 }
 
-
 input {
+    /* Set common styles for input elements */
     padding: 5px;
     border-radius: 5px;
 }
 
 #predictionForm input[type="radio"] {
+    /* Customize styles for inputs of radio button type */
+    /*scaling the radio btn */
     transform: scale(1.5);
     margin-right: 5px;
 }
 
-
 #successMessage, #errorMessage {
+    /* Set styles for success and error messages */
     position: absolute;
     bottom: 120px;
     text-align: center;
     color: #164f4d;
     font-size: larger;
     opacity: 0;
-    transition: opacity 0.2s ease-in-out;
     padding: 10px 10px 10px;
-    background-color: #75e07b;
     border-radius: 15px;
+    /*transition for message appearing and disappering*/
+    transition: opacity 0.2s ease-in-out;
+
 }
 
 #successMessage {
+    /* Styles for success message */
     color: white;
     background-color: green;
 }
 
 #errorMessage {
+    /* Styles for error message */
     color: white;
     background-color: red;
 }
 
-
 #savedResult {
+    /* Styles for saved result container */
     border: 1px dotted black;
     padding: 10px;
+    /* at first the container must not be displayed */
     display: none;
 }
 
 #clearRadioBtn {
+    /* Styles for the clear radio button */
     width: 82px;
     font-size: 11px;
+    /* at first the button must not be displayed */
     display: none;
 }
 
 button:hover {
-    background-color: lightgray; /* Background color on hover */
+    /* Styles for button hover state */
+    background-color: lightgray;
 }

@@ -1,56 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--     Meta tags for character set and viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link to stylesheet -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Page title -->
     <title>Gender Prediction Website</title>
 </head>
 <body>
 <div class="background">
 
-    <form class="content flex-row">
-        <div id="predictionForm" class="flex-container">
+    <!-- Main container including form and results side by side-->
+    <div class="content flex-row">
+        <!-- Left column (input form) -->
+        <div id="predictionForm" class="flex-col">
             <h1>Mr. or Ms.?</h1>
+            <!-- Name input field -->
             <div>
                 <label for="nameInput">Name</label>
+                <!--                name input must be 255 characters at most-->
+                <!--                english letters and spaces are accepted as input, other inputs won't change the text-->
                 <input type="text" id="nameInput" maxlength="255" required oninput="validateNameInput()"
                        onkeydown="return /[a-zA-Z ]/i.test(event.key)">
             </div>
+            <!-- Gender radio buttons -->
             <div>
-
                 <input type="radio" name="genderChoice" id="male"> Male
             </div>
             <div>
                 <input type="radio" name="genderChoice" id="female"> Female
             </div>
+            <!-- Button to clear chosen radio btn -->
             <div>
                 <button type="button" id="clearRadioBtn" onclick="clearRadios()">Clear Choice</button>
             </div>
-
             <div style="margin-top: 20px">
+                <!-- Submission button -->
                 <button type="button" id="submitButton" onclick="submitForm()" disabled>Submit</button>
+                <!-- Save (choice/prediction) button -->
                 <button type="button" onclick="saveResult()">Save</button>
             </div>
         </div>
 
-
-        <div class="flex-container">
+        <!-- Right column (prediction result) -->
+        <div class="flex-col">
             <h1>Prediction</h1>
-
-            <div id="resultContainer">
-            </div>
-            <div id="savedResult"><h2>Saved Answer: </h2>
+            <!-- Container for predicted result that is fetched -->
+            <div id="resultContainer"></div>
+            <!-- Container for previously saved result -->
+            <div id="savedResult">
+                <h2>Saved Answer: </h2>
                 <h2 id="savedAnswer"></h2>
+                <!-- A button to clear the saved result from local storage-->
                 <button id="clearButton" type="button" onclick="clearSavedChoice()">Clear</button>
             </div>
         </div>
+    </div>
 
-    </form>
+    <!-- Message containers -->
+    <!-- successMessage is used for showing messages in green and errorMessage is in red-->
     <div id="successMessage"></div>
     <div id="errorMessage"></div>
 </div>
 
+<!-- script -->
 <script src="script.js"></script>
 </body>
 </html>
